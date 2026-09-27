@@ -90,6 +90,7 @@ background: #181818; border-radius: 12px; border: 0px solid #333;
 .input-wrapper { position: relative; flex: 1; display: flex; align-items: center; }
 .input-group { display: flex; gap: 8px; position: relative; z-index: 10; }
 .search-input { width: 100%; padding: 14px 35px 14px 14px; border-radius: 10px; border: 1px solid #555; background: #1a1a1a; color: #fff; font-size: 15px; outline: none; }
+[dir="rtl"] .search-input { padding: 14px 14px 14px 35px; }
 .search-input:focus { border-color: #ffb900; }
 .clear-btn { position: absolute; right: 10px; background: none; border: none; color: #888; font-size: 18px; font-weight: bold; cursor: pointer; display: none; padding: 2px 6px; }
 [dir="rtl"] .clear-btn { right: auto; left: 10px; }
@@ -104,7 +105,8 @@ border-radius: 10px; max-height: 180px; overflow-y: auto;
 z-index: 3000; display: none; margin: 4px 0 0 0; padding: 0;
 list-style: none; box-shadow: 0 8px 20px rgba(0,0,0,0.8);
 }
-.suggestions-list li { padding: 12px; cursor: pointer; color: #eee; border-bottom: 1px solid #2e2e2e; font-size: 13px; line-height: 1.4; }
+.suggestions-list li { padding: 12px; cursor: pointer; color: #eee; border-bottom: 1px solid #2e2e2e; font-size: 13px; line-height: 1.4; text-align: left; }
+[dir="rtl"] .suggestions-list li { text-align: right; }
 .suggestions-list li:last-child { border-bottom: none; }
 .suggestions-list li:hover { background: #2a2a2a; color: #ffb900; }
 
@@ -273,7 +275,7 @@ border: 2px solid #ffb900; transition: transform 0.2s;
 <label style="font-weight:700;display:block;margin-bottom:5px" data-key="lbl-dep">🚦🟢 Départ</label>
 <div class="input-group">
 <div class="input-wrapper">
-<input type="text" id="input-depart" class="search-input" placeholder="Ex: Gare Kenitra, Marjane ou lien Maps..." autocomplete="off" oninput="onSearchInput(this.value, true)">
+<input type="text" id="input-depart" class="search-input" placeholder="Ex: Gare Kenitra, Marjane ou lien Maps..." autocomplete="off" oninput="onSearchInput(this.value, true)" data-placeholder="ph-dep">
 <button type="button" class="clear-btn" id="clear-depart" onclick="clearField(true)">✕</button>
 </div>
 <button type="button" class="gps-btn" onclick="useCurrentLocation(true)">🎯 GPS</button>
@@ -285,7 +287,7 @@ border: 2px solid #ffb900; transition: transform 0.2s;
 <label style="font-weight:700;display:block;margin-bottom:5px" data-key="lbl-dest">🚦🔴 Destination</label>
 <div class="input-group">
 <div class="input-wrapper">
-<input type="text" id="input-dest" class="search-input" placeholder="Ex: Café, Residence ou lien Maps..." autocomplete="off" oninput="onSearchInput(this.value, false)">
+<input type="text" id="input-dest" class="search-input" placeholder="Ex: Café, Residence ou lien Maps..." autocomplete="off" oninput="onSearchInput(this.value, false)" data-placeholder="ph-dest">
 <button type="button" class="clear-btn" id="clear-dest" onclick="clearField(false)">✕</button>
 </div>
 <button type="button" class="gps-btn" onclick="useCurrentLocation(false)">🎯 GPS</button>
@@ -401,6 +403,7 @@ fr: {
 "step-4-t": "Recevez", "step-4-d": "Votre coursier livre votre commande rapidement.",
 "tarif-title": "Commander ma livraison", "tarif-sub": "Choisissez vos adresses sur la carte ou recherchez par nom.",
 "lbl-dep": "🚦🟢 Départ", "lbl-dest": "🚦🔴 Destination",
+"ph-dep": "Ex: Gare Kenitra, Marjane ou lien Maps...", "ph-dest": "Ex: Café, Residence ou lien Maps...",
 "map-moving": "Déplacez la carte...", "map-use": "Utiliser ce point ›",
 "status-default": "Sélectionnez les lieux pour afficher le tarif.",
 "why-title": "Pourquoi choisir JibLi-vraison ?", "why-sub": "Un service pensé pour vous faciliter la vie.",
@@ -420,15 +423,67 @@ ar: {
 "nav-services": "الخدمات", "nav-tarifs": "الأسعار", "nav-comment": "كيف نشتغل", "nav-pourquoi": "لماذا نحن", "nav-faq": "أسئلة شائعة",
 "btn-hero-cmd": "طلب التوصيل",
 "btn-wa": "اطلب عبر واتساب", "srv-title": "جميع احتياجاتك، توصيلة واحدة", "srv-sub": "خدمة محلية مصممة لمدينة القنيطرة.",
+"srv-1-t": "التجارة الإلكترونية", "srv-1-d": "توصيل طلباتك عبر الإنترنت.",
+"srv-2-t": "المطاعم", "srv-2-d": "وجباتك تُسلَّم بسرعة.",
+"srv-3-t": "الصيدلية", "srv-3-d": "منتجات الصيدلية وفقاً للشروط المطبقة.",
+"srv-4-t": "متفرقات", "srv-4-d": "مشتريات خفيفة واحتياجات يومية.",
+"srv-5-t": "طرود صغيرة", "srv-5-d": "خدمة قريبة لبعائثك الصغرى.",
+"srv-6-t": "خدمة ليلية", "srv-6-d": "متوفرة في المساء والليل.",
+"how-title": "كيف تعمل الخدمة؟", "how-sub": "اطلب في 4 خطوات بسيطة.",
+"step-1-t": "اختر", "step-1-d": "حدد نقطة الانطلاق والوجهة.",
+"step-2-t": "احسب", "step-2-d": "يظهر السعر تلقائياً.",
+"step-3-t": "أرسل", "step-3-d": "أكد طلبك مباشرة عبر واتساب.",
+"step-4-t": "استلم", "step-4-d": "يسلمك الساعي طلبك بسرعة.",
 "tarif-title": "طلب التوصيل", "tarif-sub": "اختر العناوين من الخريطة أو ابحث بالاسم.",
 "lbl-dep": "🚦🟢 مكان الانطلاق", "lbl-dest": "🚦🔴 الوجهة",
-"map-moving": "حرك الخريطة...", "map-use": "استخدم هذه النقطة ›"
+"ph-dep": "مثال: محطة القنيطرة، مرجان...", "ph-dest": "مثال: مقهى، إقامة...",
+"map-moving": "حرك الخريطة...", "map-use": "استخدم هذه النقطة ›",
+"status-default": "اختر الأماكن لعرض السعر.",
+"why-title": "لماذا تختار JibLi-vraison؟", "why-sub": "خدمة مصممة لتسهيل حياتك.",
+"why-1-t": "السرعة", "why-1-d": "توصيل مباشر بالدراجة النارية في القنيطرة.",
+"why-2-t": "الشفافية", "why-2-d": "حساب واضح للثمن قبل الطلب.",
+"why-3-t": "البساطة", "why-3-d": "كل شيء يتم بنقرات بسيطة عبر واتساب.",
+"why-4-t": "التوفر", "why-4-d": "الخدمة متاحة حتى الساعة 02:00 صباحاً.",
+"cta-t": "تحتاج توصيل في القنيطرة؟", "cta-d": "اتصل بنا مباشرة عبر واتساب لطلبك.", "cta-b": "اطلب الآن",
+"faq-1-q": "كيف أطلب؟", "faq-1-a": "اختر نقطة الانطلاق والوجهة، ثم اضغط على زر واتساب.",
+"faq-2-q": "أين تقومون بالتوصيل؟", "faq-2-a": "الخدمة مخصصة للتوصيل داخل نطاق التغطية حتى 13 كم.",
+"faq-3-q": "كيف أعرف الثمن؟", "faq-3-a": "يتم احتساب الثمن تلقائياً حسب المسافة والوقيت.",
+"faq-4-q": "ما هي أوقات العمل؟", "faq-4-a": "من الإثنين للسبت: 17:00 إلى 02:00.<br>الأحد: 10:00 إلى 02:00.",
+"footer-text": "خدمة توصيل بالدراجة النارية في القنيطرة.",
+"acc-btn": "📊 عرض تفاصيل الأسعار", "th-dist": "المسافة", "th-eve": "العشي (17ه - 21ه)", "th-night": "الليل (21ه - 02ه)", "tbl-na": "غير متوفر (> 13 كم)"
 },
 dar: {
 "nav-services": "الخدمات", "nav-tarifs": "الأثمنة", "nav-comment": "كيفاش كانديرو", "nav-pourquoi": "علاش إحنا", "nav-faq": "الأسئلة",
 "btn-hero-cmd": "طلب التوصيل ديالك",
 "btn-wa": "طلب ف الواتساب", "srv-title": "كاع احتياجاتك ف تسخيرة وحدة", "srv-sub": "خدمة محلية مصاوبة للقنيطرة.",
+"srv-1-t": "إي-كوميرس", "srv-1-d": "توصيل السلع ديال الإنترنت.",
+"srv-2-t": "المطاعم", "srv-2-d": "الماكلة ديالك كتوصل بسرعة.",
+"srv-3-t": "الصيدلية", "srv-3-d": "دواء و لوازم الصيدلية.",
+"srv-4-t": "تسخيرات أخرى", "srv-4-d": "قضيات خفيفين و احتياجات اليوم.",
+"srv-5-t": "سلعة صغرى", "srv-5-d": "خدمة قريبة لبارسوات الصغار.",
+"srv-6-t": "خدمة بالليل", "srv-6-d": "متاحة فالعشية وفيات الليل.",
+"how-title": "كيفاش كانديرو؟", "how-sub": "طلب ف 4 مراحل ساهلة.",
+"step-1-t": "عزل", "step-1-d": "حدد بلاصة الانطلاق والوصول.",
+"step-2-t": "حسب", "step-2-d": "الثمن كيتبان بوحدو.",
+"step-3-t": "صيفط", "step-3-d": "أكد الطلب ديالك ديريكت ف الواتساب.",
+"step-4-t": "تسلم", "step-4-d": "الساعي كيوصلك الطلب دغيا.",
 "tarif-title": "طلب التوصيل ديالك", "tarif-sub": "عزل البلايص ف الخريطة أو قلب بالسمية.",
+"lbl-dep": "🚦🟢 بلاصة الانطلاق", "lbl-dest": "🚦🔴 فين غيوصل",
+"ph-dep": "مثال: محطة القنيطرة، مرجان...", "ph-dest": "مثال: قهوة، إقامة...",
+"map-moving": "حرك الخريطة...", "map-use": "خدم هاد البلاصة ›",
+"status-default": "عزل البلايص باش يبان الثمن.",
+"why-title": "علاش تختار JibLi-vraison؟", "why-sub": "خدمة مصاوبة باش تسهل عليك حياتك.",
+"why-1-t": "السرعة", "why-1-d": "توصيل بالزربة فالموتور ف القنيطرة.",
+"why-2-t": "الوضوح", "why-2-d": "حساب واضح للثمن قبل ما تطلب.",
+"why-3-t": "الساهلة", "why-3-d": "كلشي كيتصاوب بكليكات ف الواتساب.",
+"why-4-t": "الوجود", "why-4-d": "الخدمة خدامة حتي ل 2:00 ديال الليل.",
+"cta-t": "خصك توصيل ف القنيطرة؟", "cta-d": "تواصل معانا ديريكت ف الواتساب لطلبك.", "cta-b": "طلب دابا",
+"faq-1-q": "كيفاش نطلب؟", "faq-1-a": "عزل بلاصة الانطلاق والوصول، وكليكي على زر الواتساب.",
+"faq-2-q": "فين كتصلو؟", "faq-2-a": "الخدمة مخصصة للتوصيل ف حدود 13 كم.",
+"faq-3-q": "كيفاش نعرف الثمن؟", "faq-3-a": "الثمن كيتحسب بوحدو على حساب المسافة والوقيت.",
+"faq-4-q": "أشنو هي أوقات العمل؟", "faq-4-a": "من الاثنين للسبت: 17:00 ل 02:00.<br>الحد: 10:00 ل 02:00.",
+"footer-text": "خدمة توصيل بالموتور ف القنيطرة.",
+"acc-btn": "📊 عرض تفاصيل الأثمنة", "th-dist": "المسافة", "th-eve": "العشية (17ه - 21ه)", "th-night": "الليل (21ه - 02ه)", "tbl-na": "ما كايناش (> 13 كم)"
 }
 };
 
@@ -482,11 +537,11 @@ function checkCenterInZone(latLng) {
     if (!isInsideZone) {
         pickerCard.style.borderColor = "#ff4444";
         actionText.style.color = "#ff4444";
-        actionText.innerText = "Hors zone ✕";
+        actionText.innerText = currentLang === 'ar' ? 'خارج النطاق ✕' : (currentLang === 'dar' ? 'خارج البلاصة ✕' : 'Hors zone ✕');
     } else {
         pickerCard.style.borderColor = "#ffb900";
         actionText.style.color = "#00a082";
-        actionText.innerText = currentLang === 'ar' || currentLang === 'dar' ? 'استخدم هذه النقطة ›' : 'Utiliser ce point ›';
+        actionText.innerText = currentLang === 'ar' ? 'استخدم هذه النقطة ›' : (currentLang === 'dar' ? 'خدم هاد البلاصة ›' : 'Utiliser ce point ›');
     }
 }
 
@@ -504,7 +559,7 @@ function updateCenterAddress(latLng) {
 
 function confirmCenterPoint() {
     if (!isInsideZone) {
-        alert(currentLang === 'ar' || currentLang === 'dar' ? "هذه النقطة خارج منطقة التغطية (Hors zone)!" : "Cette position est hors zone de livraison !");
+        alert(currentLang === 'ar' || currentLang === 'dar' ? "هذه النقطة خارج منطقة التغطية!" : "Cette position est hors zone de livraison !");
         return;
     }
 
@@ -517,7 +572,7 @@ function confirmCenterPoint() {
         if (depMarker) depMarker.setMap(null);
         depMarker = new google.maps.Marker({ position: center, map: map, label: "A" });
         isSettingDepNext = false;
-        document.getElementById("picker-address").innerText = "Choisissez la destination...";
+        document.getElementById("picker-address").innerText = currentLang === 'ar' ? 'اختر الوجهة...' : (currentLang === 'dar' ? 'عزل فين غيوصل...' : 'Choisissez la destination...');
     } else {
         destCoord = center;
         destName = currentCenterAddress || "Destination";
@@ -622,7 +677,7 @@ function clearField(isDep) {
     }
     directionsRenderer.set('directions', null);
     document.getElementById("result").innerText = "— DH";
-    document.getElementById("status").innerText = "Sélectionnez les lieux pour afficher le tarif.";
+    document.getElementById("status").innerText = currentLang === 'ar' ? 'اختر الأماكن لعرض السعر.' : (currentLang === 'dar' ? 'عزل البلايص باش يبان الثمن.' : 'Sélectionnez les lieux pour afficher le tarif.');
 }
 
 function useCurrentLocation(isDep) {
@@ -725,13 +780,14 @@ function applyPricingLogic(distanceKm) {
     } else if (distanceKm <= 13) {
         price = isNight ? 40 : 35;
     } else {
-        document.getElementById("result").innerText = "Non dispo";
-        document.getElementById("status").innerText = "Distance supérieure à 13 km (Service non disponible).";
+        document.getElementById("result").innerText = currentLang === 'ar' ? 'غير متوفر' : (currentLang === 'dar' ? 'ما كايناش' : 'Non dispo');
+        document.getElementById("status").innerText = currentLang === 'ar' ? 'المسافة أكبر من 13 كم (الخدمة غير متوفرة).' : (currentLang === 'dar' ? 'المسافة فائتة 13 كم (الخدمة ما كايناش).' : 'Distance supérieure à 13 km (Service non disponible).');
         return;
     }
 
     document.getElementById("result").innerText = price + " DH";
-    document.getElementById("status").innerText = `Distance : ${distanceKm.toFixed(1)} km (${isNight ? 'Tarif Nuit' : 'Tarif Soir'})`;
+    const timeText = isNight ? (currentLang === 'ar' ? 'توصيل ليلي' : (currentLang === 'dar' ? 'ثمن الليل' : 'Tarif Nuit')) : (currentLang === 'ar' ? 'توصيل مسائي' : (currentLang === 'dar' ? 'ثمن العشية' : 'Tarif Soir'));
+    document.getElementById("status").innerText = `Distance : ${distanceKm.toFixed(1)} km (${timeText})`;
 
     const depInputValue = document.getElementById("input-depart").value;
     const destInputValue = document.getElementById("input-dest").value;
@@ -767,8 +823,16 @@ function changeLanguage(lang) {
             el.innerHTML = t[key];
         }
     });
+
+    document.querySelectorAll("[data-placeholder]").forEach(el => {
+        const pKey = el.getAttribute("data-placeholder");
+        if (t[pKey]) {
+            el.placeholder = t[pKey];
+        }
+    });
 }
 </script>
 </body>
 </html>
+
 
