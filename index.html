@@ -90,6 +90,7 @@ background: #181818; border-radius: 12px; border: 0px solid #333;
 .input-wrapper { position: relative; flex: 1; display: flex; align-items: center; }
 .input-group { display: flex; gap: 8px; position: relative; z-index: 10; }
 .search-input { width: 100%; padding: 14px 35px 14px 14px; border-radius: 10px; border: 1px solid #555; background: #1a1a1a; color: #fff; font-size: 15px; outline: none; }
+[dir="rtl"] .search-input { padding: 14px 14px 14px 35px; }
 .search-input:focus { border-color: #ffb900; }
 .clear-btn { position: absolute; right: 10px; background: none; border: none; color: #888; font-size: 18px; font-weight: bold; cursor: pointer; display: none; padding: 2px 6px; }
 [dir="rtl"] .clear-btn { right: auto; left: 10px; }
@@ -102,8 +103,9 @@ position: absolute; top: 100%; left: 0; right: 0;
 background: #1e1e1e; border: 1px solid #ffb900;
 border-radius: 10px; max-height: 180px; overflow-y: auto;
 z-index: 3000; display: none; margin: 4px 0 0 0; padding: 0;
-list-style: none; box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+list-style: none; box-shadow: 0 8px 20px rgba(0,0,0,0.8); text-align: left;
 }
+[dir="rtl"] .suggestions-list { text-align: right; }
 .suggestions-list li { padding: 12px; cursor: pointer; color: #eee; border-bottom: 1px solid #2e2e2e; font-size: 13px; line-height: 1.4; }
 .suggestions-list li:last-child { border-bottom: none; }
 .suggestions-list li:hover { background: #2a2a2a; color: #ffb900; }
@@ -158,19 +160,19 @@ border: 2px solid #ffb900; transition: transform 0.2s;
 <section class="hero">
 <div class="c">
 <div class="poster-container">
-<svg viewBox="0 0 1000 720" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="background:#090909; font-family:Arial, sans-serif; border-radius:18px; border:1px solid #333; box-shadow:0 12px 40px rgba(0,0,0,0.8); direction: ltr;">
+<svg viewBox="0 0 1000 720" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="background:#090909; font-family:Arial, sans-serif; border-radius:18px; border:1px solid #333; box-shadow:0 12px 40px rgba(0,0,0,0.8);">
 <rect width="1000" height="720" fill="#0c0c0c" rx="18"/>
 <path d="M 480 0 L 1000 0 L 1000 720 L 380 720 Z" fill="#141414"/>
 <circle cx="750" cy="280" r="220" fill="#ffb900" opacity="0.04"/>
 
-<g transform="translate(45, 45)" style="direction: ltr;">
+<g transform="translate(45, 45)">
 <text x="0" y="0" font-weight="900" font-style="italic" font-size="52" fill="#ffffff" text-anchor="start">JibLi-<tspan fill="#ffb900">vraison</tspan></text>
 <line x1="0" y1="18" x2="380" y2="18" stroke="#ffb900" stroke-width="4" stroke-linecap="round"/>
 <text x="0" y="44" id="svg-sub" font-weight="bold" font-size="15" fill="#aaa" letter-spacing="1" text-anchor="start" data-key="svg-sub">SERVICE DE COURSIER À MOTO</text>
 </g>
 
 <!-- Cadre Jaune -->
-<g transform="translate(45, 125)" style="direction: ltr;">
+<g transform="translate(45, 125)">
 <rect width="420" height="150" fill="#ffb900" rx="14"/>
 <text x="24" y="34" id="svg-disp-title" font-weight="900" font-size="20" fill="#111" text-anchor="start" data-key="svg-disp-title">DISPONIBLE À KÉNITRA</text>
 <line x1="24" y1="46" x2="396" y2="46" stroke="#111" stroke-width="1.5" opacity="0.3"/>
@@ -179,7 +181,7 @@ border: 2px solid #ffb900; transition: transform 0.2s;
 </g>
 
 <!-- Badges -->
-<g transform="translate(45, 295)" style="direction: ltr;">
+<g transform="translate(45, 295)">
 <rect x="0" y="0" width="130" height="75" fill="#181818" stroke="#2c2c2c" rx="12"/>
 <text x="65" y="28" font-size="22" text-anchor="middle">⚡</text>
 <text x="65" y="52" id="svg-badge-1" font-weight="bold" font-size="11" fill="#fff" text-anchor="middle" data-key="svg-badge-1">LIVRAISON RAPIDE</text>
@@ -194,7 +196,7 @@ border: 2px solid #ffb900; transition: transform 0.2s;
 </g>
 
 <!-- Tous vos besoins -->
-<g transform="translate(45, 395)" style="direction: ltr;">
+<g transform="translate(45, 395)">
 <text x="0" y="18" id="svg-serv-head" font-weight="900" font-size="14" fill="#ffb900" letter-spacing="0.5" text-anchor="start" data-key="svg-serv-head">TOUS VOS BESOINS, UNE SEULE LIVRAISON</text>
 
 <g transform="translate(0, 32)">
@@ -217,7 +219,7 @@ border: 2px solid #ffb900; transition: transform 0.2s;
 </g>
 
 <!-- Moto Graphic -->
-<g transform="translate(520, 100)" style="direction: ltr;">
+<g transform="translate(520, 100)">
 <circle cx="210" cy="210" r="170" fill="#1a1a1a" stroke="#ffb900" stroke-width="2" stroke-dasharray="8,8"/>
 <text x="200" y="250" font-size="180" text-anchor="middle">🛵</text>
 
@@ -230,7 +232,7 @@ border: 2px solid #ffb900; transition: transform 0.2s;
 </g>
 
 <!-- CTA Footer -->
-<g transform="translate(45, 620)" style="direction: ltr;">
+<g transform="translate(45, 620)">
 <rect width="910" height="55" fill="#181818" stroke="#ffb900" stroke-width="2" rx="14"/>
 <text x="25" y="34" id="svg-cta" font-weight="bold" font-size="15" fill="#fff" text-anchor="start" data-key="svg-cta">REJOIGNEZ-NOUS DÈS MAINTENANT</text>
 <a href="https://wa.me/212634084543?text=Bonjour%20JibLi-vraison%2C%20je%20souhaite%20une%20livraison" target="_blank" style="cursor:pointer">
@@ -273,10 +275,10 @@ border: 2px solid #ffb900; transition: transform 0.2s;
 <label style="font-weight:700;display:block;margin-bottom:5px" data-key="lbl-dep">🚦🟢 Départ</label>
 <div class="input-group">
 <div class="input-wrapper">
-<input type="text" id="input-depart" class="search-input" placeholder="Ex: Gare Kenitra, Marjane ou lien Maps..." autocomplete="off" oninput="onSearchInput(this.value, true)">
+<input type="text" id="input-depart" class="search-input" data-placeholder-key="ph-dep" placeholder="Ex: Gare Kenitra, Marjane ou lien Maps..." autocomplete="off" oninput="onSearchInput(this.value, true)">
 <button type="button" class="clear-btn" id="clear-depart" onclick="clearField(true)">✕</button>
 </div>
-<button type="button" class="gps-btn" onclick="useCurrentLocation(true)">🎯 GPS</button>
+<button type="button" class="gps-btn" onclick="useCurrentLocation(true)" data-key="btn-gps">🎯 GPS</button>
 </div>
 <ul id="list-depart" class="suggestions-list"></ul>
 </div>
@@ -285,10 +287,10 @@ border: 2px solid #ffb900; transition: transform 0.2s;
 <label style="font-weight:700;display:block;margin-bottom:5px" data-key="lbl-dest">🚦🔴 Destination</label>
 <div class="input-group">
 <div class="input-wrapper">
-<input type="text" id="input-dest" class="search-input" placeholder="Ex: Café, Residence ou lien Maps..." autocomplete="off" oninput="onSearchInput(this.value, false)">
+<input type="text" id="input-dest" class="search-input" data-placeholder-key="ph-dest" placeholder="Ex: Café, Residence ou lien Maps..." autocomplete="off" oninput="onSearchInput(this.value, false)">
 <button type="button" class="clear-btn" id="clear-dest" onclick="clearField(false)">✕</button>
 </div>
-<button type="button" class="gps-btn" onclick="useCurrentLocation(false)">🎯 GPS</button>
+<button type="button" class="gps-btn" onclick="useCurrentLocation(false)" data-key="btn-gps">🎯 GPS</button>
 </div>
 <ul id="list-dest" class="suggestions-list"></ul>
 </div>
@@ -318,27 +320,27 @@ border: 2px solid #ffb900; transition: transform 0.2s;
 </button>
 
 <div class="price-table-wrapper" id="accordion-content">
-  <table class="price-table">
-    <thead>
-      <tr>
-        <th data-key="th-dist">Distance</th>
-        <th data-key="th-eve">Soir (17h - 21h)</th>
-        <th data-key="th-night">Nuit (21h - 02h)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>1 - 3 Km</td><td>15 DH</td><td>20 DH</td></tr>
-      <tr><td>4 Km</td><td>18 DH</td><td>23 DH</td></tr>
-      <tr><td>5 Km</td><td>20 DH</td><td>25 DH</td></tr>
-      <tr><td>6 Km</td><td>22 DH</td><td>27 DH</td></tr>
-      <tr><td>7 Km</td><td>25 DH</td><td>30 DH</td></tr>
-      <tr><td>8 Km</td><td>27 DH</td><td>32 DH</td></tr>
-      <tr><td>9 Km</td><td>30 DH</td><td>35 DH</td></tr>
-      <tr><td>10 Km</td><td>32 DH</td><td>37 DH</td></tr>
-      <tr><td>11 - 13 Km</td><td>35 DH</td><td>40 DH</td></tr>
-      <tr><td>> 13 Km</td><td colspan="2" style="color:#ff4444;" data-key="tbl-na">Service non disponible</td></tr>
-    </tbody>
-  </table>
+<table class="price-table">
+<thead>
+<tr>
+<th data-key="th-dist">Distance</th>
+<th data-key="th-eve">Soir (17h - 21h)</th>
+<th data-key="th-night">Nuit (21h - 02h)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1 - 3 Km</td><td>15 DH</td><td>20 DH</td></tr>
+<tr><td>4 Km</td><td>18 DH</td><td>23 DH</td></tr>
+<tr><td>5 Km</td><td>20 DH</td><td>25 DH</td></tr>
+<tr><td>6 Km</td><td>22 DH</td><td>27 DH</td></tr>
+<tr><td>7 Km</td><td>25 DH</td><td>30 DH</td></tr>
+<tr><td>8 Km</td><td>27 DH</td><td>32 DH</td></tr>
+<tr><td>9 Km</td><td>30 DH</td><td>35 DH</td></tr>
+<tr><td>10 Km</td><td>32 DH</td><td>37 DH</td></tr>
+<tr><td>11 - 13 Km</td><td>35 DH</td><td>40 DH</td></tr>
+<tr><td>> 13 Km</td><td colspan="2" style="color:#ff4444;" data-key="tbl-na">Service non disponible</td></tr>
+</tbody>
+</table>
 </div>
 
 </div></div></section>
@@ -352,7 +354,7 @@ border: 2px solid #ffb900; transition: transform 0.2s;
 
 <section><div class="c"><div class="cta"><div><h2 data-key="cta-t">Besoin d'une livraison à Kénitra ?</h2><p data-key="cta-d">Contactez-nous directement sur WhatsApp pour votre commande.</p></div><a class="btn" href="https://wa.me/212634084543?text=Bonjour%20JibLi-vraison%2C%20je%20souhaite%20une%20livraison" data-key="cta-b">Commander maintenant</a></div></div></section>
 
-<section id="faq"><div class="c"><h2 class="title">FAQ</h2><div class="faq">
+<section id="faq"><div class="c"><h2 class="title" data-key="faq-main-title">FAQ</h2><div class="faq">
 <details><summary data-key="faq-1-q">Comment commander ?</summary><div class="answer" data-key="faq-1-a">Choisissez le lieu de départ et la destination (ou entrez les adresses), puis cliquez sur le bouton WhatsApp.</div></details>
 <details><summary data-key="faq-2-q">Où faites-vous les livraisons ?</summary><div class="answer" data-key="faq-2-a">Le service est destiné aux livraisons dans la zone de couverture jusqu'à 13 km.</div></details>
 <details><summary data-key="faq-3-q">Comment connaître le prix ?</summary><div class="answer" data-key="faq-3-a">Le prix est calculé automatiquement en fonction du kilométrage exact et de l'heure actuelle.</div></details>
@@ -374,13 +376,13 @@ let kenitraPolygon = null;
 let isInsideZone = true;
 
 const kenitraCoords = [
-    {lat: 34.3500, lng: -6.6500},
-    {lat: 34.3500, lng: -6.5300},
-    {lat: 34.2500, lng: -6.5100},
-    {lat: 34.1800, lng: -6.5300},
-    {lat: 34.1800, lng: -6.6200},
-    {lat: 34.2000, lng: -6.6800},
-    {lat: 34.3000, lng: -6.6800}
+{lat: 34.3500, lng: -6.6500},
+{lat: 34.3500, lng: -6.5300},
+{lat: 34.2500, lng: -6.5100},
+{lat: 34.1800, lng: -6.5300},
+{lat: 34.1800, lng: -6.6200},
+{lat: 34.2000, lng: -6.6800},
+{lat: 34.3000, lng: -6.6800}
 ];
 
 const translations = {
@@ -401,6 +403,8 @@ fr: {
 "step-4-t": "Recevez", "step-4-d": "Votre coursier livre votre commande rapidement.",
 "tarif-title": "Commander ma livraison", "tarif-sub": "Choisissez vos adresses sur la carte ou recherchez par nom.",
 "lbl-dep": "🚦🟢 Départ", "lbl-dest": "🚦🔴 Destination",
+"ph-dep": "Ex: Gare Kenitra, Marjane ou lien Maps...", "ph-dest": "Ex: Café, Residence ou lien Maps...",
+"btn-gps": "🎯 GPS",
 "map-moving": "Déplacez la carte...", "map-use": "Utiliser ce point ›",
 "status-default": "Sélectionnez les lieux pour afficher le tarif.",
 "why-title": "Pourquoi choisir JibLi-vraison ?", "why-sub": "Un service pensé pour vous faciliter la vie.",
@@ -409,366 +413,405 @@ fr: {
 "why-3-t": "Simplicité", "why-3-d": "Tout se fait en quelques clics via WhatsApp.",
 "why-4-t": "Disponibilité", "why-4-d": "Service disponible jusqu'à 02h00 du matin.",
 "cta-t": "Besoin d'une livraison à Kénitra ?", "cta-d": "Contactez-nous directement sur WhatsApp pour votre commande.", "cta-b": "Commander maintenant",
+"faq-main-title": "FAQ",
 "faq-1-q": "Comment commander ?", "faq-1-a": "Choisissez le lieu de départ et la destination (ou entrez les adresses), puis cliquez sur le bouton WhatsApp.",
 "faq-2-q": "Où faites-vous les livraisons ?", "faq-2-a": "Le service est destiné aux livraisons dans la zone de couverture jusqu'à 13 km.",
 "faq-3-q": "Comment connaître le prix ?", "faq-3-a": "Le prix est calculé automatiquement en fonction du kilométrage exact et de l'heure.",
 "faq-4-q": "Quels sont vos horaires ?", "faq-4-a": "Du Lundi au Samedi : 17h00 à 02h00.<br>Le Dimanche : 10h00 à 02h00.",
 "footer-text": "Service de coursier à moto à Kénitra.",
-"acc-btn": "📊 Afficher le détail des tarifs", "th-dist": "Distance", "th-eve": "Soir (17h - 21h)", "th-night": "Nuit (21h - 02h)", "tbl-na": "Non disponible (> 13 km)"
+"acc-btn": "📊 Afficher le détail des tarifs", "th-dist": "Distance", "th-eve": "Soir (17h - 21h)", "th-night": "Nuit (21h - 02h)", "tbl-na": "Non disponible (> 13 km)",
+"svg-sub": "SERVICE DE COURSIER À MOTO", "svg-disp-title": "DISPONIBLE À KÉNITRA", "svg-disp-1": "🕒 Lun - Sam : 17h00 à 02h00", "svg-disp-2": "🕒 Dimanche : 10h00 à 02h00",
+"svg-badge-1": "LIVRAISON RAPIDE", "svg-badge-2": "SÉCURISÉE & FIABLE", "svg-badge-3": "SERVICE NOCTURNE",
+"svg-serv-head": "TOUS VOS BESOINS, UNE SEULE LIVRAISON", "svg-s1": "E-Commerce", "svg-s2": "Restaurants", "svg-s3": "Pharmacie", "svg-s4": "Petits Colis & Courses", "svg-cta": "REJOIGNEZ-NOUS DÈS MAINTENANT"
 },
 ar: {
 "nav-services": "الخدمات", "nav-tarifs": "الأسعار", "nav-comment": "كيف نشتغل", "nav-pourquoi": "لماذا نحن", "nav-faq": "أسئلة شائعة",
 "btn-hero-cmd": "طلب التوصيل",
 "btn-wa": "اطلب عبر واتساب", "srv-title": "جميع احتياجاتك، توصيلة واحدة", "srv-sub": "خدمة محلية مصممة لمدينة القنيطرة.",
+"srv-1-t": "التجارة الإلكترونية", "srv-1-d": "توصيل طلباتكم عبر الإنترنت.",
+"srv-2-t": "المطاعم", "srv-2-d": "توصيل وجباتكم بسرعة.",
+"srv-3-t": "الصيدلية", "srv-3-d": "منتجات الصيدلية حسب الشروط المعمول بها.",
+"srv-4-t": "مشتريات متنوعة", "srv-4-d": "مشتريات صغيرة واحتياجات يومية.",
+"srv-5-t": "طرود صغيرة", "srv-5-d": "خدمة قريبة لرسائلكم الصغيرة.",
+"srv-6-t": "خدمة الليل", "srv-6-d": "متوفرة في المساء والليل.",
+"how-title": "كيف تعمل الخدمة؟", "how-sub": "اطلب في 4 خطوات بسيطة.",
+"step-1-t": "اختر", "step-1-d": "حدد مكان الانطلاق والوجهة.",
+"step-2-t": "احسب", "step-2-d": "يظهر السعر تلقائياً.",
+"step-3-t": "أرسل", "step-3-d": "أكد طلبك مباشرة عبر واتساب.",
+"step-4-t": "استلم", "step-4-d": "مندوب التوصيل يوصل طلبك بسرعة.",
 "tarif-title": "طلب التوصيل", "tarif-sub": "اختر العناوين من الخريطة أو ابحث بالاسم.",
 "lbl-dep": "🚦🟢 مكان الانطلاق", "lbl-dest": "🚦🔴 الوجهة",
-"map-moving": "حرك الخريطة...", "map-use": "استخدم هذه النقطة ›"
+"ph-dep": "مثال: محطة القنيطرة، مرجان...", "ph-dest": "مثال: مقهى، إقامة...",
+"btn-gps": "🎯 تحديد الموقع",
+"map-moving": "حرك الخريطة...", "map-use": "استخدم هذه النقطة ›",
+"status-default": "اختر الأماكن لعرض السعر.",
+"why-title": "لماذا تختار خدمة جيبلي؟", "why-sub": "خدمة مصممة لتسهيل حياتك.",
+"why-1-t": "السرعة", "why-1-d": "توصيل مباشر بالدراجة النارية في القنيطرة.",
+"why-2-t": "الشفافية", "why-2-d": "حساب واضح للسعر قبل الطلب.",
+"why-3-t": "السهولة", "why-3-d": "كل شيء يتم بنقرات قليلة عبر واتساب.",
+"why-4-t": "التوفر", "why-4-d": "الخدمة متاحة حتى الساعة 02:00 صباحاً.",
+"cta-t": "تحتاج إلى توصيل في القنيطرة؟", "cta-d": "اتصل بنا مباشرة عبر واتساب لطلبك.", "cta-b": "اطلب الآن",
+"faq-main-title": "الأسئلة الشائعة",
+"faq-1-q": "كيف أطلب؟", "faq-1-a": "اختر مكان الانطلاق والوجهة ثم اضغط على زر واتساب.",
+"faq-2-q": "أين تقومون بالتوصيل؟", "faq-2-a": "الخدمة مخصصة للتوصيل ضمن نطاق التغطية حتى 13 كم.",
+"faq-3-q": "كيف أعرف السعر؟", "faq-3-a": "يتم احتساب السعر تلقائياً حسب المسافة الدقيقة والتوقيت.",
+"faq-4-q": "ما هي أوقات عملكم؟", "faq-4-a": "من الإثنين إلى السبت: من 17:00 إلى 02:00.<br>يوم الأحد: من 10:00 إلى 02:00.",
+"footer-text": "خدمة توصيل بالدراجة النارية في القنيطرة.",
+"acc-btn": "📊 عرض تفاصيل الأسعار", "th-dist": "المسافة", "th-eve": "الليل (17h - 21h)", "th-night": "الليل المتأخر (21h - 02h)", "tbl-na": "غير متوفر (> 13 كم)",
+"svg-sub": "خدمة التوصيل السريع", "svg-disp-title": "متاح في القنيطرة", "svg-disp-1": "🕒 الإثنين - السبت: 17:00 إلى 02:00", "svg-disp-2": "🕒 الأحد: 10:00 إلى 02:00",
+"svg-badge-1": "توصيل سريع", "svg-badge-2": "آمن وموثوق", "svg-badge-3": "خدمة ليلية",
+"svg-serv-head": "كل احتياجاتك في توصيلة واحدة", "svg-s1": "التجارة الإلكترونية", "svg-s2": "المطاعم", "svg-s3": "الصيدلية", "svg-s4": "الطرود والمشتريات", "svg-cta": "انضم إلينا الآن"
 },
 dar: {
 "nav-services": "الخدمات", "nav-tarifs": "الأثمنة", "nav-comment": "كيفاش كانديرو", "nav-pourquoi": "علاش إحنا", "nav-faq": "الأسئلة",
 "btn-hero-cmd": "طلب التوصيل ديالك",
 "btn-wa": "طلب ف الواتساب", "srv-title": "كاع احتياجاتك ف تسخيرة وحدة", "srv-sub": "خدمة محلية مصاوبة للقنيطرة.",
+"srv-1-t": "E-commerce", "srv-1-d": "توصيل الطلبات ديالك من الانترنت.",
+"srv-2-t": "المطاعم", "srv-2-d": "الماكلة ديالك واصلة بسرعة.",
+"srv-3-t": "الفارماسي", "srv-3-d": "دوايات و لوازم الفارماسي على حسب الشروط.",
+"srv-4-t": "تسخيرات متنوعة", "srv-4-d": "مشتريات خفيفة و احتياجات اليوم.",
+"srv-5-t": "سلعة صغار", "srv-5-d": "خدمة قريبة للارساليات ديالك الصغار.",
+"srv-6-t": "خدمة بالليل", "srv-6-d": "موجودين في العشية و الليل.",
+"how-title": "كيفاش كانديرو؟", "how-sub": "طلب ف 4 مراحل ساهلة.",
+"step-1-t": "عزل", "step-1-d": "حدد بلاصة الانطلاق و فين غادي توصل.",
+"step-2-t": "حسب", "step-2-d": "الثمن كيطلع بوحدو.",
+"step-3-t": "صيفط", "step-3-d": "أكدي الطلب ديريكت في الواتساب.",
+"step-4-t": "تسلم", "step-4-d": "الكوغيير يوصل ليك الطلب دغيا.",
 "tarif-title": "طلب التوصيل ديالك", "tarif-sub": "عزل البلايص ف الخريطة أو قلب بالسمية.",
+"lbl-dep": "🚦🟢 بلاصة الانطلاق", "lbl-dest": "🚦🔴 فين غادي توصل",
+"ph-dep": "مثال: محطة القنيطرة، مرجان...", "ph-dest": "مثال: قهوة، إقامة...",
+"btn-gps": "🎯 GPS",
+"map-moving": "حرك الخريطة...", "map-use": "خدم هاد النقطة ›",
+"status-default": "عزل البلايص باش يبان الثمن.",
+"why-title": "علاش تختار JibLi-vraison؟", "why-why": "خدمة مصاوبة باش تسهل عليك حياتك.",
+"why-1-t": "السرعة", "why-1-d": "توصيل ديريكت بالموطور ف القنيطرة.",
+"why-2-t": "الوضوح", "why-2-d": "حساب واضح للثمن قبل ما تطلب.",
+"why-3-t": "الساهلة", "why-3-d": "كلشي كيتصاوب ببضع كليكات في الواتساب.",
+"why-4-t": "التواجد", "why-4-d": "الخدمة باقا خدامة حتى ل 02:00 ديال الليل.",
+"cta-t": "خصك توصيل ف القنيطرة؟", "cta-d": "تواصل معنا ديريكت ف الواتساب لطلبك.", "cta-b": "طلب دابا",
+"faq-main-title": "الأسئلة المتكررة",
+"faq-1-q": "كيفاش نطلب؟", "faq-1-a": "عزل بلاصة الانطلاق والوصول، عاد كليكي على زر الواتساب.",
+"faq-2-q": "فين كتوصيلو؟", "faq-2-a": "الخدمة مخصصة للتوصيل داخل مدينة القنيطرة حتى 13 كلم.",
+"faq-3-q": "كيفاش نعرف الثمن؟", "faq-3-a": "الثمن كيتسب بوحدو على حسب المسافة و الوقت.",
+"faq-4-q": "شنو هوما أوقات العمل؟", "faq-4-a": "من الإثنين حتى السبت: من 17:00 حتى 02:00.<br>نهار الأحد: من 10:00 حتى 02:00.",
+"footer-text": "خدمة توصيل بالموطور ف القنيطرة.",
+"acc-btn": "📊 وريني تفاصيل الأثمنة", "th-dist": "المسافة", "th-eve": "العشية (17h - 21h)", "th-night": "الليل (21h - 02h)", "tbl-na": "ما خدامش (> 13 كلم)",
+"svg-sub": "خدمة التوصيل بالموطور", "svg-disp-title": "موجودين ف القنيطرة", "svg-disp-1": "🕒 الإثنين - السبت: 17:00 ل 02:00", "svg-disp-2": "🕒 الأحد: 10:00 ل 02:00",
+"svg-badge-1": "توصيل زربان", "svg-badge-2": "مضمون وآمن", "svg-badge-3": "خدمة ليلية",
+"svg-serv-head": "كاع احتياجاتك ف تسخيرة وحدة",
+"svg-s1": "E-Commerce",
+"svg-s2": "المطاعم",
+"svg-s3": "الفارماسي",
+"svg-s4": "سلعة صغار وتسخيرات",
+"svg-cta": "تواصل معنا دابا"
 }
 };
 
 window.onload = function() {
-    initGoogleMap();
+initGoogleMap();
 };
 
 function initGoogleMap() {
-    const kenitraCenter = { lat: 34.2610, lng: -6.5802 };
+const kenitraCenter = { lat: 34.2610, lng: -6.5802 };
 
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: kenitraCenter,
-        zoom: 12,
-        disableDefaultUI: true,
-        zoomControl: true
-    });
+map = new google.maps.Map(document.getElementById("map"), {
+center: kenitraCenter,
+zoom: 12,
+disableDefaultUI: true,
+zoomControl: true
+});
 
-    kenitraPolygon = new google.maps.Polygon({
-        paths: kenitraCoords,
-        strokeColor: "#ffb900",
-        strokeOpacity: 0.6,
-        strokeWeight: 1.5,
-        fillColor: "#ffb900",
-        fillOpacity: 0.0
-    });
-    kenitraPolygon.setMap(map);
+kenitraPolygon = new google.maps.Polygon({
+paths: kenitraCoords,
+strokeColor: "#ffb900",
+strokeOpacity: 0.6,
+strokeWeight: 1.5,
+fillColor: "#ffb900",
+fillOpacity: 0.0
+});
+kenitraPolygon.setMap(map);
 
-    directionsService = new google.maps.DirectionsService();
-    directionsRenderer = new google.maps.DirectionsRenderer({
-        map: map,
-        suppressMarkers: false
-    });
-    geocoder = new google.maps.Geocoder();
-    autocompleteService = new google.maps.places.AutocompleteService();
+directionsService = new google.maps.DirectionsService();
+directionsRenderer = new google.maps.DirectionsRenderer({
+map: map,
+suppressMarkers: false
+});
+geocoder = new google.maps.Geocoder();
+autocompleteService = new google.maps.places.AutocompleteService();
 
-    map.addListener("bounds_changed", () => {
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => {
-            const center = map.getCenter();
-            checkCenterInZone(center);
-            updateCenterAddress(center);
-        }, 400);
-    });
+map.addListener("bounds_changed", () => {
+clearTimeout(searchTimeout);
+searchTimeout = setTimeout(() => {
+const center = map.getCenter();
+checkCenterInZone(center);
+updateCenterAddress(center);
+}, 400);
+});
 }
 
 function checkCenterInZone(latLng) {
-    isInsideZone = google.maps.geometry.poly.containsLocation(latLng, kenitraPolygon);
-    const pickerCard = document.getElementById("picker-card");
-    const actionText = document.getElementById("picker-action-text");
+isInsideZone = google.maps.geometry.poly.containsLocation(latLng, kenitraPolygon);
+const pickerCard = document.getElementById("picker-card");
+const actionText = document.getElementById("picker-action-text");
 
-    if (!isInsideZone) {
-        pickerCard.style.borderColor = "#ff4444";
-        actionText.style.color = "#ff4444";
-        actionText.innerText = "Hors zone ✕";
-    } else {
-        pickerCard.style.borderColor = "#ffb900";
-        actionText.style.color = "#00a082";
-        actionText.innerText = currentLang === 'ar' || currentLang === 'dar' ? 'استخدم هذه النقطة ›' : 'Utiliser ce point ›';
-    }
+if (!isInsideZone) {
+pickerCard.style.borderColor = "#ff4444";
+actionText.style.color = "#ff4444";
+actionText.innerText = currentLang === 'ar' || currentLang === 'dar' ? 'خارج نطاق التغطية ✕' : 'Hors zone ✕';
+} else {
+pickerCard.style.borderColor = "#ffb900";
+actionText.style.color = "#00a082";
+actionText.innerText = currentLang === 'ar' ? 'استخدم هذه النقطة ›' : (currentLang === 'dar' ? 'خدم هاد النقطة ›' : 'Utiliser ce point ›');
+}
 }
 
 function updateCenterAddress(latLng) {
-    geocoder.geocode({ location: latLng }, (results, status) => {
-        if (status === "OK" && results[0]) {
-            currentCenterAddress = results[0].formatted_address;
-            document.getElementById("picker-address").innerText = currentCenterAddress;
-        } else {
-            document.getElementById("picker-address").innerText = "Kénitra, Maroc";
-            currentCenterAddress = "Kénitra, Maroc";
-        }
-    });
+geocoder.geocode({ location: latLng }, (results, status) => {
+if (status === "OK" && results[0]) {
+currentCenterAddress = results[0].formatted_address;
+document.getElementById("picker-address").innerText = currentCenterAddress;
+} else {
+document.getElementById("picker-address").innerText = "Kénitra, Maroc";
+currentCenterAddress = "Kénitra, Maroc";
+}
+});
 }
 
 function confirmCenterPoint() {
-    if (!isInsideZone) {
-        alert(currentLang === 'ar' || currentLang === 'dar' ? "هذه النقطة خارج منطقة التغطية (Hors zone)!" : "Cette position est hors zone de livraison !");
-        return;
-    }
+if (!isInsideZone) {
+alert(currentLang === 'ar' || currentLang === 'dar' ? "هذه النقطة خارج منطقة التغطية (Hors zone)!" : "Cette position est hors zone de livraison !");
+return;
+}
 
-    const center = map.getCenter();
-    if (isSettingDepNext) {
-        depCoord = center;
-        depName = currentCenterAddress || "Point de départ";
-        document.getElementById("input-depart").value = depName;
-        document.getElementById("clear-depart").style.display = "block";
-        if (depMarker) depMarker.setMap(null);
-        depMarker = new google.maps.Marker({ position: center, map: map, label: "A" });
-        isSettingDepNext = false;
-        document.getElementById("picker-address").innerText = "Choisissez la destination...";
-    } else {
-        destCoord = center;
-        destName = currentCenterAddress || "Destination";
-        document.getElementById("input-dest").value = destName;
-        document.getElementById("clear-dest").style.display = "block";
-        if (destMarker) destMarker.setMap(null);
-        destMarker = new google.maps.Marker({ position: center, map: map, label: "B" });
-        isSettingDepNext = true;
-    }
-    calculateRouteAndPrice();
+const center = map.getCenter();
+if (isSettingDepNext) {
+depCoord = center;
+depName = currentCenterAddress || "Point de départ";
+document.getElementById("input-depart").value = depName;
+document.getElementById("clear-depart").style.display = "block";
+if (depMarker) depMarker.setMap(null);
+depMarker = new google.maps.Marker({ position: center, map: map, label: "A" });
+isSettingDepNext = false;
+document.getElementById("picker-address").innerText = currentLang === 'ar' ? 'اختر الوجهة...' : (currentLang === 'dar' ? 'عزل بلاصة الوصول...' : 'Choisissez la destination...');
+} else {
+destCoord = center;
+destName = currentCenterAddress || "Destination";
+document.getElementById("input-dest").value = destName;
+document.getElementById("clear-dest").style.display = "block";
+if (destMarker) destMarker.setMap(null);
+destMarker = new google.maps.Marker({ position: center, map: map, label: "B" });
+isSettingDepNext = true;
+}
+calculateRouteAndPrice();
 }
 
 function onSearchInput(val, isDep) {
-    const clearBtnId = isDep ? "clear-depart" : "clear-dest";
-    document.getElementById(clearBtnId).style.display = val.length > 0 ? "block" : "none";
-    
-    const listId = isDep ? "list-depart" : "list-dest";
-    const listEl = document.getElementById(listId);
+const clearBtnId = isDep ? "clear-depart" : "clear-dest";
+document.getElementById(clearBtnId).style.display = val.length > 0 ? "block" : "none";
+const listId = isDep ? "list-depart" : "list-dest";
+const listEl = document.getElementById(listId);
 
-    if (!val || val.length < 2) {
-        listEl.style.display = "none";
-        return;
-    }
+if (!val || val.length < 2) {
+listEl.style.display = "none";
+return;
+}
 
-    const kenitraBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(34.18, -6.68),
-        new google.maps.LatLng(34.35, -6.50)
-    );
+const kenitraBounds = new google.maps.LatLngBounds(
+new google.maps.LatLng(34.18, -6.68),
+new google.maps.LatLng(34.35, -6.50)
+);
 
-    autocompleteService.getPlacePredictions({
-        input: val,
-        bounds: kenitraBounds,
-        componentRestrictions: { country: 'ma' }
-    }, (predictions, status) => {
-        if (status === google.maps.places.PlacesServiceStatus.OK && predictions) {
-            listEl.innerHTML = "";
-            predictions.forEach(prediction => {
-                const li = document.createElement("li");
-                li.innerHTML = prediction.description;
-                li.onclick = () => selectPrediction(prediction.place_id, prediction.description, isDep);
-                listEl.appendChild(li);
-            });
-            listEl.style.display = "block";
-        } else {
-            listEl.style.display = "none";
-        }
-    });
+autocompleteService.getPlacePredictions({
+input: val,
+bounds: kenitraBounds,
+componentRestrictions: { country: 'ma' }
+}, (predictions, status) => {
+if (status === google.maps.places.PlacesServiceStatus.OK && predictions) {
+listEl.innerHTML = "";
+predictions.forEach(prediction => {
+const li = document.createElement("li");
+li.innerHTML = prediction.description;
+li.onclick = () => selectPrediction(prediction.place_id, prediction.description, isDep);
+listEl.appendChild(li);
+});
+listEl.style.display = "block";
+} else {
+listEl.style.display = "none";
+}
+});
 }
 
 function selectPrediction(placeId, description, isDep) {
-    const inputId = isDep ? "input-depart" : "input-dest";
-    const listId = isDep ? "list-depart" : "list-dest";
-    document.getElementById(inputId).value = description;
-    document.getElementById(listId).style.display = "none";
+const inputId = isDep ? "input-depart" : "input-dest";
+const listId = isDep ? "list-depart" : "list-dest";
+document.getElementById(inputId).value = description;
+document.getElementById(listId).style.display = "none";
 
-    const placesService = new google.maps.places.PlacesService(map);
-    placesService.getDetails({ placeId: placeId }, (place, status) => {
-        if (status === google.maps.places.PlacesServiceStatus.OK && place.geometry && place.geometry.location) {
-            const loc = place.geometry.location;
-            
-            const checkInZone = google.maps.geometry.poly.containsLocation(loc, kenitraPolygon);
-            if (!checkInZone) {
-                alert(currentLang === 'ar' || currentLang === 'dar' ? "هذا الموقع خارج نطاق الخدمة!" : "Ce lieu est hors zone de service !");
-                return;
-            }
+const placesService = new google.maps.places.PlacesService(map);
+placesService.getDetails({ placeId: placeId }, (place, status) => {
+if (status === google.maps.places.PlacesServiceStatus.OK && place.geometry && place.geometry.location) {
+const loc = place.geometry.location;
+const checkInZone = google.maps.geometry.poly.containsLocation(loc, kenitraPolygon);
+if (!checkInZone) {
+alert(currentLang === 'ar' || currentLang === 'dar' ? "هذا الموقع خارج نطاق الخدمة!" : "Ce lieu est hors zone de service !");
+return;
+}
 
-            if (isDep) {
-                depCoord = loc;
-                depName = description;
-                if (depMarker) depMarker.setMap(null);
-                depMarker = new google.maps.Marker({ position: loc, map: map, label: "A" });
-            } else {
-                destCoord = loc;
-                destName = description;
-                if (destMarker) destMarker.setMap(null);
-                destMarker = new google.maps.Marker({ position: loc, map: map, label: "B" });
-            }
-            map.setCenter(loc);
-            map.setZoom(15);
-            calculateRouteAndPrice();
-        }
-    });
+if (isDep) {
+depCoord = loc;
+depName = description;
+if (depMarker) depMarker.setMap(null);
+depMarker = new google.maps.Marker({ position: loc, map: map, label: "A" });
+} else {
+destCoord = loc;
+destName = description;
+if (destMarker) destMarker.setMap(null);
+destMarker = new google.maps.Marker({ position: loc, map: map, label: "B" });
+}
+map.setCenter(loc);
+map.setZoom(15);
+calculateRouteAndPrice();
+}
+});
 }
 
 function clearField(isDep) {
-    const inputId = isDep ? "input-depart" : "input-dest";
-    const clearBtnId = isDep ? "clear-depart" : "clear-dest";
-    const listId = isDep ? "list-depart" : "list-dest";
-    
-    document.getElementById(inputId).value = "";
-    document.getElementById(clearBtnId).style.display = "none";
-    document.getElementById(listId).style.display = "none";
+const inputId = isDep ? "input-depart" : "input-dest";
+const clearBtnId = isDep ? "clear-depart" : "clear-dest";
+const listId = isDep ? "list-depart" : "list-dest";
+document.getElementById(inputId).value = "";
+document.getElementById(clearBtnId).style.display = "none";
+document.getElementById(listId).style.display = "none";
 
-    if (isDep) {
-        depCoord = null;
-        depName = "";
-        if (depMarker) { depMarker.setMap(null); depMarker = null; }
-    } else {
-        destCoord = null;
-        destName = "";
-        if (destMarker) { destMarker.setMap(null); destMarker = null; }
-    }
-    directionsRenderer.set('directions', null);
-    document.getElementById("result").innerText = "— DH";
-    document.getElementById("status").innerText = "Sélectionnez les lieux pour afficher le tarif.";
+if (isDep) {
+depCoord = null;
+depName = "";
+if (depMarker) { depMarker.setMap(null); depMarker = null; }
+} else {
+destCoord = null;
+destName = "";
+if (destMarker) { destMarker.setMap(null); destMarker = null; }
+}
+directionsRenderer.set('directions', null);
+document.getElementById("result").innerText = "— DH";
+document.getElementById("status").innerText = translations[currentLang]["status-default"] || "Sélectionnez les lieux pour afficher le tarif.";
 }
 
 function useCurrentLocation(isDep) {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-            const pos = { lat: position.coords.latitude, lng: position.coords.longitude };
-            
-            const checkInZone = google.maps.geometry.poly.containsLocation(new google.maps.LatLng(pos.lat, pos.lng), kenitraPolygon);
-            if (!checkInZone) {
-                alert(currentLang === 'ar' || currentLang === 'dar' ? "موقعك الحالي خارج نطاق التوصيل!" : "Votre position actuelle est hors zone !");
-                return;
-            }
-
-            geocoder.geocode({ location: pos }, (results, status) => {
-                const address = (status === "OK" && results[0]) ? results[0].formatted_address : "Position GPS";
-                if (isDep) {
-                    depCoord = pos;
-                    depName = `GPS (${pos.lat.toFixed(5)}, ${pos.lng.toFixed(5)})`;
-                    document.getElementById("input-depart").value = depName;
-                    document.getElementById("clear-depart").style.display = "block";
-                    if (depMarker) depMarker.setMap(null);
-                    depMarker = new google.maps.Marker({ position: pos, map: map, label: "A" });
-                } else {
-                    destCoord = pos;
-                    destName = `GPS (${pos.lat.toFixed(5)}, ${pos.lng.toFixed(5)})`;
-                    document.getElementById("input-dest").value = destName;
-                    document.getElementById("clear-dest").style.display = "block";
-                    if (destMarker) destMarker.setMap(null);
-                    destMarker = new google.maps.Marker({ position: pos, map: map, label: "B" });
-                }
-                map.setCenter(pos);
-                map.setZoom(17);
-                calculateRouteAndPrice();
-            });
-        }, () => {
-            alert("Erreur de géolocalisation.");
-        });
-    } else {
-        alert("Votre navigateur ne supporte pas la géolocalisation.");
-    }
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition((position) => {
+const pos = { lat: position.coords.latitude, lng: position.coords.longitude };
+const checkInZone = google.maps.geometry.poly.containsLocation(new google.maps.LatLng(pos), kenitraPolygon);
+if (!checkInZone) {
+alert(currentLang === 'ar' || currentLang === 'dar' ? "موقعك الحالي خارج منطقة التغطية!" : "Votre position actuelle est hors zone !");
+return;
+}
+map.setCenter(pos);
+map.setZoom(16);
+if (isDep) {
+depCoord = pos;
+depName = "Position actuelle (GPS)";
+document.getElementById("input-depart").value = depName;
+document.getElementById("clear-depart").style.display = "block";
+if (depMarker) depMarker.setMap(null);
+depMarker = new google.maps.Marker({ position: pos, map: map, label: "A" });
+} else {
+destCoord = pos;
+destName = "Position actuelle (GPS)";
+document.getElementById("input-dest").value = destName;
+document.getElementById("clear-dest").style.display = "block";
+if (destMarker) destMarker.setMap(null);
+destMarker = new google.maps.Marker({ position: pos, map: map, label: "B" });
+}
+calculateRouteAndPrice();
+}, () => {
+alert(currentLang === 'ar' || currentLang === 'dar' ? "تعذر تحديد الموقع الجغرافي!" : "Erreur de géolocalisation !");
+});
+}
 }
 
 function calculateRouteAndPrice() {
-    if (!depCoord || !destCoord) return;
+if (!depCoord || !destCoord) return;
 
-    directionsService.route({
-        origin: depCoord,
-        destination: destCoord,
-        travelMode: google.maps.TravelMode.DRIVING
-    }, (response, status) => {
-        if (status === "OK") {
-            directionsRenderer.setDirections(response);
-            const route = response.routes[0];
-            let distanceMeters = 0;
-            for (let i = 0; i < route.legs.length; i++) {
-                distanceMeters += route.legs[i].distance.value;
-            }
-            const distanceKm = distanceMeters / 1000;
-            applyPricingLogic(distanceKm);
-        } else {
-            document.getElementById("status").innerText = "Impossible de calculer l'itinéraire.";
-        }
-    });
+directionsService.route({
+origin: depCoord,
+destination: destCoord,
+travelMode: google.maps.TravelMode.DRIVING
+}, (response, status) => {
+if (status === "OK") {
+directionsRenderer.setDirections(response);
+const distanceMeters = response.routes[0].legs[0].distance.value;
+const distanceKm = distanceMeters / 1000;
+const price = computePrice(distanceKm);
+
+document.getElementById("result").innerText = price !== null ? price + " DH" : (currentLang === 'ar' || currentLang === 'dar' ? "خارج التغطية" : "Non disponible");
+document.getElementById("status").innerText = (currentLang === 'ar' ? 'المسافة: ' : (currentLang === 'dar' ? 'المسافة: ' : 'Distance : ')) + distanceKm.toFixed(1) + " Km";
+
+const waText = encodeURIComponent(
+(currentLang === 'ar' ? 'مرحباً JibLi-vraison، أرغب في طلب توصيل:\n' : (currentLang === 'dar' ? 'سلام JibLi-vraison، بغيت طلب تسخيرة:\n' : 'Bonjour JibLi-vraison, je souhaite commander une livraison :\n')) +
+(currentLang === 'ar' ? '🚦🟢 الانطلاق: ' : (currentLang === 'dar' ? '🚦🟢 الانطلاق: ' : '🚦🟢 Départ : ')) + depName + '\n' +
+(currentLang === 'ar' ? '🚦🔴 الوجهة: ' : (currentLang === 'dar' ? '🚦🔴 الوصول: ' : '🚦🔴 Destination : ')) + destName + '\n' +
+(currentLang === 'ar' ? '📏 المسافة: ' : (currentLang === 'dar' ? '📏 المسافة: ' : '📏 Distance : ')) + distanceKm.toFixed(1) + ' Km\n' +
+(currentLang === 'ar' ? '💰 الثمن التقديري: ' : (currentLang === 'dar' ? '💰 الثمن التقريبي: ' : '💰 Tarif estimé : ')) + (price !== null ? price + ' DH' : 'Non disponible')
+);
+document.getElementById("order").href = "https://wa.me/212634084543?text=" + waText;
+}
+});
 }
 
-function getMapLink(coord, inputVal) {
-    if (inputVal && inputVal.includes('http')) {
-        return inputVal;
-    }
-    if (coord) {
-        const lat = typeof coord.lat === 'function' ? coord.lat() : coord.lat;
-        const lng = typeof coord.lng === 'function' ? coord.lng() : coord.lng;
-        return `https://maps.google.com/?q=${lat},${lng}`;
-    }
-    return "Non spécifié";
-}
+function computePrice(km) {
+const now = new Date();
+const hour = now.getHours();
+const isNight = hour >= 21 || hour < 2;
 
-function applyPricingLogic(distanceKm) {
-    const now = new Date();
-    const hour = now.getHours();
-    const isNight = (hour >= 21 || hour < 5);
-
-    let price = 0;
-    if (distanceKm <= 3) {
-        price = isNight ? 20 : 15;
-    } else if (distanceKm <= 4) {
-        price = isNight ? 23 : 18;
-    } else if (distanceKm <= 5) {
-        price = isNight ? 25 : 20;
-    } else if (distanceKm <= 6) {
-        price = isNight ? 27 : 22;
-    } else if (distanceKm <= 7) {
-        price = isNight ? 30 : 25;
-    } else if (distanceKm <= 8) {
-        price = isNight ? 32 : 27;
-    } else if (distanceKm <= 9) {
-        price = isNight ? 35 : 30;
-    } else if (distanceKm <= 10) {
-        price = isNight ? 37 : 32;
-    } else if (distanceKm <= 13) {
-        price = isNight ? 40 : 35;
-    } else {
-        document.getElementById("result").innerText = "Non dispo";
-        document.getElementById("status").innerText = "Distance supérieure à 13 km (Service non disponible).";
-        return;
-    }
-
-    document.getElementById("result").innerText = price + " DH";
-    document.getElementById("status").innerText = `Distance : ${distanceKm.toFixed(1)} km (${isNight ? 'Tarif Nuit' : 'Tarif Soir'})`;
-
-    const depInputValue = document.getElementById("input-depart").value;
-    const destInputValue = document.getElementById("input-dest").value;
-
-    const depMapLink = getMapLink(depCoord, depInputValue);
-    const destMapLink = getMapLink(destCoord, destInputValue);
-
-    const waText = `Bonjour JibLi-vraison, je souhaite commander une livraison.%0A%0A📍 Départ : ${depInputValue || depName}%0A🔗 Map Départ : ${depMapLink}%0A%0A🏁 Destination : ${destInputValue || destName}%0A🔗 Map Destination : ${destMapLink}%0A%0A📏 Distance : ${distanceKm.toFixed(1)} km%0A💰 Prix estimé : ${price} DH`;
-    
-    document.getElementById("order").href = `https://wa.me/212634084543?text=${waText}`;
+if (km <= 3) return isNight ? 20 : 15;
+if (km <= 4) return isNight ? 23 : 18;
+if (km <= 5) return isNight ? 25 : 20;
+if (km <= 6) return isNight ? 27 : 22;
+if (km <= 7) return isNight ? 30 : 25;
+if (km <= 8) return isNight ? 32 : 27;
+if (km <= 9) return isNight ? 35 : 30;
+if (km <= 10) return isNight ? 37 : 32;
+if (km <= 13) return isNight ? 40 : 35;
+return null;
 }
 
 function toggleAccordion(btn) {
-    btn.classList.toggle("active");
-    const content = document.getElementById("accordion-content");
-    content.classList.toggle("open");
+btn.classList.toggle("active");
+const content = document.getElementById("accordion-content");
+if (content.classList.contains("open")) {
+content.classList.remove("open");
+} else {
+content.classList.add("open");
+}
 }
 
 function changeLanguage(lang) {
-    currentLang = lang;
-    const t = translations[lang];
-    if (!t) return;
+currentLang = lang;
+const htmlRoot = document.getElementById("html-root");
+if (lang === 'ar' || lang === 'dar') {
+htmlRoot.setAttribute("dir", "rtl");
+} else {
+htmlRoot.setAttribute("dir", "ltr");
+}
 
-    if (lang === 'ar' || lang === 'dar') {
-        document.getElementById("html-root").setAttribute("dir", "rtl");
-    } else {
-        document.getElementById("html-root").setAttribute("dir", "ltr");
-    }
+const t = translations[lang];
+if (!t) return;
 
-    document.querySelectorAll("[data-key]").forEach(el => {
-        const key = el.getAttribute("data-key");
-        if (t[key]) {
-            el.innerHTML = t[key];
-        }
-    });
+document.querySelectorAll("[data-key]").forEach(el => {
+const key = el.getAttribute("data-key");
+if (t[key]) {
+el.innerHTML = t[key];
+}
+});
+
+document.querySelectorAll("[data-placeholder-key]").forEach(el => {
+const key = el.getAttribute("data-placeholder-key");
+if (t[key]) {
+el.placeholder = t[key];
+}
+});
 }
 </script>
 </body>
 </html>
-
